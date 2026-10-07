@@ -8,7 +8,7 @@ from ..models.zone import CriticalZone
 from ..models.resource import EmergencyResource
 from ..models.plan import ResourcePlan, PlanDiff
 
-router = APIRouter(prefix="/api")
+router = APIRouter()
 
 
 class ApprovalRequest(BaseModel):
