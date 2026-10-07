@@ -1,5 +1,7 @@
+import os
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from .api.routes import router
 
 app = FastAPI(
@@ -8,7 +10,7 @@ app = FastAPI(
     version="1.0.0",
 )
 
-# CORS configuration for local React / Vite frontend
+# CORS configuration
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -19,14 +21,21 @@ app.add_middleware(
 
 app.include_router(router)
 
-
-@app.get("/")
-def root():
+@app.get("/api/health")
+def health():
     return {
         "engine": "RESQ-AI",
         "full_name": "Adaptive Emergency Decision & Resource Replanning Engine",
-        "domain": "Smart Automation / Disaster Resource Coordination",
         "status": "OPERATIONAL",
-        "simulation_mode": True,
-        "docs_url": "/docs",
     }
+
+# Mount compiled React frontend if present
+dist_candidates = [
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", "frontend", "dist")),
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend", "dist")),
+    os.path.abspath(os.path.join(os.getcwd(), "frontend", "dist")),
+]
+for dist_path in dist_candidates:
+    if os.path.isdir(dist_path) and os.path.exists(os.path.join(dist_path, "index.html")):
+        app.mount("/", StaticFiles(directory=dist_path, html=True), name="frontend")
+        break
