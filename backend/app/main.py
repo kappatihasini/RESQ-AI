@@ -63,3 +63,7 @@ if found_dist:
         return FileResponse(index_file)
 
     app.mount("/", StaticFiles(directory=found_dist, html=True), name="frontend")
+else:
+    @app.get("/")
+    def serve_fallback_root():
+        return health()
