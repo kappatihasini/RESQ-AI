@@ -11,7 +11,7 @@
       "destination": "/api/index.py?__path__=$1"
     },
     {
-      "source": "/(.*)",
+      "source": "/((?!assets|api).*)",
       "destination": "/index.html"
     }
   ]
