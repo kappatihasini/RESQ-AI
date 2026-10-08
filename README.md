@@ -18,9 +18,21 @@
 ---
 
 ## 🌐 Live Cloud Deployment
-* **Production Command Center:** [https://resq-ai-red.vercel.app](https://resq-ai-red.vercel.app)
-* **Live API Health Check:** [https://resq-ai-red.vercel.app/api/health](https://resq-ai-red.vercel.app/api/health)
-* **Live Synchronized State API:** [https://resq-ai-red.vercel.app/api/state](https://resq-ai-red.vercel.app/api/state)
+
+### Production Command Center
+[https://resq-ai-red.vercel.app](https://resq-ai-red.vercel.app)
+
+The live RESQ-AI command center for interacting with the decision-support and resource replanning system.
+
+### Live API Health Check
+[https://resq-ai-red.vercel.app/api/health](https://resq-ai-red.vercel.app/api/health)
+
+Returns the current operational status of the RESQ-AI backend.
+
+### Live Synchronized State API
+[https://resq-ai-red.vercel.app/api/state](https://resq-ai-red.vercel.app/api/state)
+
+Returns the current synchronized system state used by the decision-support engine.
 
 ---
 
