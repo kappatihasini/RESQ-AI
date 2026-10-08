@@ -17,6 +17,13 @@
 
 ---
 
+## 🌐 Live Cloud Deployment
+* **Production Command Center:** [https://resq-ai-red.vercel.app](https://resq-ai-red.vercel.app)
+* **Live API Health Check:** [https://resq-ai-red.vercel.app/api/health](https://resq-ai-red.vercel.app/api/health)
+* **Live Synchronized State API:** [https://resq-ai-red.vercel.app/api/state](https://resq-ai-red.vercel.app/api/state)
+
+---
+
 ## 🚀 Quick Start Instructions
 
 ### 1. Start the Backend API (FastAPI)
